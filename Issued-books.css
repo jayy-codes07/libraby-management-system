@@ -1,0 +1,123 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(
+    to right,
+    blueviolet,
+    rgba(137, 43, 226, 0.345)
+  );
+  height: 100vh;
+  margin: 2vh 2vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+
+.title {
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  background: rgba(255, 255, 255, 0.1);
+  padding-bottom: 1vh;
+  padding: 1vh;
+  /* border: 1px solid white;
+      */
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 2vh;
+  width: 97%;
+}
+
+.title i {
+  color: #ff5733;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+.btn {
+  height: 38px;
+  width: 100px;
+  background-color: #ff5733;
+  color: white;
+  font-weight: 400;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.card {
+  height: 26vh;
+  width: 47vh;
+  border: 1px solid black;
+  border-radius: 12px;
+  /* background-color: #ff5733; */
+  display: flex;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.1); /* Transparent white */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  margin: 4vh 1.2vh;
+}
+.img-part{
+    height: 90%; 
+    width: 38%; 
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1.5px solid rgba(0, 0, 0, 0.438);
+}
+.img-part img {
+    height: 84%; 
+    width: 75%; 
+  background-size: cover;
+border-radius: 5px;
+}
+
+.contant-part{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.details-question{
+    padding-left: 1vh;
+}
+.details-question{
+
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+.details-question span{
+    color: rgb(255, 255, 255);
+    font-weight: 350;
+}
+.details-btn{
+display: flex;
+padding-top: 1.5vh;
+justify-content: center;
+}
+
+.card:hover {
+    transform: scale(0.96);
+    box-shadow: 0 14px 16px rgba(0, 0, 0, 0.183);
+    border: 1px solid black;
+    transition: 0.5s;
+  }

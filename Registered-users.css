@@ -1,0 +1,87 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(
+    to right,
+    blueviolet,
+    rgba(137, 43, 226, 0.345)
+  );
+  display: flex;
+
+  align-items: center;
+  height: 100vh;
+  margin: 2vh 0;
+  flex-direction: column;
+}
+
+.title {
+  color: white;
+  display: flex;
+  width: 98%;
+  margin: 3vh 0vh;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  background: rgba(255, 255, 255, 0.1);
+  padding-bottom: 1vh;
+  padding: 1vh;
+
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 2vh;
+}
+.title i {
+  color: #ff5733;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+.btn-login {
+  height: 38px;
+  width: 100px;
+  background-color: #ff5733;
+  color: white;
+  font-weight: 400;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+}
+
+.student-name-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.student-name {
+  height: 12vh;
+  width: 50vh;
+  background: rgba(255, 255, 255, 0.1); /* Transparent white */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 2vh;
+  margin: 2vh 3vh;
+  align-items: center;
+  padding-left: 24px;
+}
+
+.student-name span {
+  margin: 0px;
+  font-size: 2.3vh;
+}
+
+.student-name i {
+  margin: 0px 5px;
+  color: blue;
+}

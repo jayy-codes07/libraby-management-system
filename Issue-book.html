@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Issue Book</title>
+
+    <link rel="stylesheet" href="Issue-book.css" />
+  </head>
+  <body>
+    <!-- jay shree ram -->
+
+    <div class="title">
+      <h1>
+        <a href="index.html"><i class="fa-solid fa-book-open-reader"></i></a>&nbsp;&nbsp;
+        <span id="text-heading">Online Library Management System</span>
+      </h1>
+      <button type="button" class="btn-login">LOGIN</button>
+    </div>
+    <div class="form-container">
+      <h2>Issue Book</h2>
+
+      <form action="#" method="POST">
+        <!-- Student Information -->
+
+        <fieldset>
+          <legend>Student Information</legend>
+          <div class="student-box">
+            <label for="student-name">Name:</label>
+            <input type="text" id="student-name" name="student_name" required />
+
+            <label for="student-id">Student ID:</label>
+            <input type="text" id="student-id" name="student_id" required />
+
+            <label for="contact">Contact(Email):</label>
+            <input id="contact" type="email" placeholder="Enter email">
+            <!-- <input type="tel" id="contact" name="contact" required /> -->
+
+            <label for="department">Department:</label>
+            <input type="text" id="department" name="department" required />
+          </div>
+        </fieldset>
+
+        <!-- Book Information -->
+        <fieldset>
+          <legend>Book Information</legend>
+          <div class="student-box">
+          <label for="book-id">Book ID:</label>
+          <input type="text" id="book-id" name="book_id" required />
+
+          <label for="issue-date">Issue Date:</label>
+          <input type="date" id="issue-date" name="issue_date" required />
+
+          <label for="return-date">Return Date:</label>
+          <input type="date" id="return-date" name="return_date" required />
+          </div>
+        </fieldset>
+
+        <button id="Issue-book-btn" type="button">Issue Book</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7fc894a6f5.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
