@@ -1,51 +1,17 @@
+/* --- GLOBAL RESET --- */
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
-/* for title */
 
-.title {
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  flex-direction: row;
-   background: rgba(255, 255, 255, 0.1);
-   padding-bottom: 1vh;
-   padding: 1vh;
-   /* border: 1px solid white;
-    */
-    border: 2px solid rgba(255, 255, 255, 0.3);
-   border-radius: 10px;
-   padding: 2vh;
-}
-.title i {
-  color: #ff5733;
-  background-color: white;
-  padding: 10px;
-  border-radius: 10px;
-}
-.btn {
-  height: 38px;
-  width: 100px;
-  background-color: #ff5733;
-  color: white;
-  font-weight: 400;
-  border-radius: 10px;
-  border: none;
-  font-size: 18px;
-}
-
-
+/* --- MAIN CONTAINER --- */
 .book-list {
-  /* background-color: blueviolet; */
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
-  padding: 20px 30px;
+  padding: 20px;
   background-attachment: fixed;
   background-image: linear-gradient(
     to right,
@@ -55,145 +21,264 @@
   color: #8a2be3;
 }
 
+/* --- TITLE BAR --- */
+.title {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allows wrapping */
+  gap: 15px;
+  
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  margin-bottom: 20px;
+  
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  width: 100%;
+}
+
+.title h1 {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.title i {
+  color: #ff5733;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.btn {
+  height: 40px;
+  padding: 0 20px;
+  background-color: #ff5733;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* --- SUB-HEADER (Search & Add Button) --- */
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Important for mobile */
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
 .head h1 {
   color: #f5f5f5;
+  font-size: 1.5rem;
 }
 
 .head-btn {
-  height: 6vh;
-  width: 16vh;
-  font-size: 2.3vh;
+  height: 40px;
+  padding: 0 20px;
+  font-size: 16px;
   background-color: white;
   border-radius: 7px;
   border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
 }
+
 .head-btn a {
   text-decoration: none;
   color: #8a2be3;
   font-weight: 700;
 }
+
 .head-btn:hover {
-  transform: scale(0.95); /* Increases size by 20% */
+  transform: scale(0.95);
   cursor: pointer;
-  /* background-color: #ece2e2; */
-  background-color: white;
   box-shadow: 0 6px 15px #8a2be38b;
-  transition: 0.2s;
-}
-.head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* border-top: 1px solid rgba(15, 1, 1, 0.874); */
-  height: 10vh;
 }
 
+/* --- SEARCH SECTION --- */
 .search-section {
-  position: relative;
-  width: 250px;
-  min-height: 10vh;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 5vh;
-  /* margin-left: 45vh; */
+  margin-bottom: 40px;
 }
-.input-text {
-  height: 5vh;
-  width: 35%;
-  border-radius: 30px;
-  border: none;
-  padding-left: 2vh;
 
-  font-size: 2.3vh;
-  padding: 10px 35px 10px 10px;
+.input-text {
+  height: 50px;
+  width: 100%; 
+  max-width: 500px; /* Limits width on desktop */
+  
+  border-radius: 30px;
+  padding: 10px 45px 10px 20px; /* Space for icon */
+  font-size: 1rem;
+  
   border: 1px solid #7d7a7a;
-  background-color: rgba(240, 240, 240, 0.493);
+  background-color: rgba(240, 240, 240, 0.9);
   outline: none;
   transition: all 0.3s ease-in-out;
+  
   background-image: url("https://cdn-icons-png.flaticon.com/512/10629/10629681.png");
   background-repeat: no-repeat;
   background-position: 95% center;
   background-size: 20px;
 }
-.input-text:hover {
-  transform: scale(0.95);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.183);
+
+.input-text:hover, .input-text:focus {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   border: 1.5px solid black;
 }
 
+/* --- CARD GRID --- */
 .book-card-box {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  gap: 2vh;
+  gap: 30px;
 }
+
+/* --- INDIVIDUAL CARD --- */
 .book-card {
-  min-height: 44vh;
-  width: 55vh;
-  background: rgba(255, 255, 255, 0.1); /* Transparent white */
+  /* Responsive Dimensions */
+  width: 450px;
+  max-width: 100%; /* Prevents overflow on mobile */
+  min-height: 220px;
+  
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  -webkit-backdrop-filter: blur(10px);
+  
   border: 2px solid rgba(255, 255, 255, 0.3);
-  display: flex;
-  border-radius: 2vh;
+  border-radius: 16px;
+  
+  display: flex; /* Side by side layout */
   align-items: center;
-  justify-content: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  padding: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
 }
 
 .book-card:hover {
-  transform: scale(0.95);
-  box-shadow: 0 14px 16px rgba(0, 0, 0, 0.183);
-  border: 1px solid black;
-  transition: 0.5s;
+  transform: translateY(-5px);
+  box-shadow: 0 14px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }
+
+/* Image Container (Left Side) */
 .book-card1 {
-  height: 26vh;
-  width: 22vh;
-  padding-left: 2vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.book-card2 {
-  color: #000000;
-  width: 28vh;
-  margin: 1vh;
+  width: 140px; /* Fixed width for image area */
+  height: 190px;
+  flex-shrink: 0; /* Prevents image from shrinking */
+  margin-right: 20px;
 }
 
 .book-card img {
   height: 100%;
-  width: 90%;
-  background-size: cover;
-  border-radius: 0.5vh;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
+
+/* Text Container (Right Side) */
+.book-card2 {
+  flex-grow: 1; /* Takes up remaining space */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
 .book-name {
   color: #ffffff;
-  font-weight: 700;
-  font-size: 2.2vh;
-  padding: 2.5px 0;
+  font-weight: 800;
+  font-size: 1.2rem;
+  line-height: 1.3;
 }
+
 .book-author {
-  color: #313030;
+  color: #e0e0e0;
   font-weight: 600;
-  padding: 2.5px 0;
+  font-size: 1rem;
 }
+
 .book-desc {
   font-weight: 300;
-  padding: 2.5px 0;
-  font-size: 1.9vh;
+  font-size: 0.9rem;
+  color: #d1d1d1;
+  margin: 5px 0;
+  /* Limit text to 3 lines just in case */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
-.book-qty {
-  color: #ffffff;
-  padding: 2.5px 0;
+
+.book-qty, .book-id {
   font-weight: 700;
+  font-size: 0.9rem;
+  background: rgba(0,0,0,0.2);
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  width: fit-content;
+  margin-top: 5px;
 }
-.book-id {
-  padding: 2.5px 0;
-  font-weight: 600;
+
+/* --- MOBILE SPECIFIC STYLES --- */
+@media screen and (max-width: 600px) {
+  .book-list {
+      padding: 10px;
+  }
+
+  .title {
+      flex-direction: column;
+      text-align: center;
+  }
+  .title h1 {
+      flex-direction: column;
+      font-size: 0.8rem;
+      height: 80px;
+  }
+
+  .head {
+      flex-direction: column;
+      align-items: stretch; /* Stretch button to full width */
+      text-align: center;
+  }
+
+  .head-btn {
+      width: 100%; /* Full width button on mobile */
+  }
+
+  /* Card adjustment for small phones */
+  .book-card {
+      flex-direction: column; /* Stack image on top of text */
+      text-align: center;
+      padding: 20px;
+      height: auto;
+      margin: 15px;
+  }
+
+  .book-card1 {
+      margin-right: 0;
+      margin-bottom: 15px;
+      width: 120px;
+      height: 160px;
+  }
+
+  .book-card2 {
+      align-items: center; /* Center text */
+  }
 }
