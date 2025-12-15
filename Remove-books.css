@@ -1,47 +1,57 @@
+/* --- GLOBAL RESET --- */
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
 
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
-}
+/* --- BODY & LAYOUT --- */
 body {
   font-family: Arial, sans-serif;
+  /* Use min-height so content can scroll if needed */
+  min-height: 100vh;
   background-image: linear-gradient(
     to right,
     blueviolet,
     rgba(137, 43, 226, 0.345)
   );
   display: flex;
-
-  align-items: center;
-  height: 100vh;
-  margin: 0vh 0;
   flex-direction: column;
+  align-items: center;
+  padding: 10px;
 }
 
+/* --- TITLE BAR --- */
 .title {
   color: white;
   display: flex;
-  width: 98%;
-  margin: 3vh 0vh;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap;
-  flex-direction: row;
+  flex-wrap: wrap; /* Allows stacking on mobile */
+  gap: 15px;
+
   background: rgba(255, 255, 255, 0.1);
-  padding-bottom: 1vh;
-  padding: 1vh;
+  margin: 20px auto;
+  
+  /* Responsive Width */
+  width: 95%;
+  max-width: 1200px;
+
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 26px;
-  padding: 1vh 2vh;
+  padding: 15px 20px;
 }
+
+.title h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: clamp(1.2rem, 4vw, 1.8rem); /* Responsive Text */
+}
+
+/* Logo/Icon Styling */
 .title i {
   color: #ff5733;
   background-color: white;
@@ -50,37 +60,79 @@ body {
 }
 
 .title img {
-  color: #ff5733;
   background-color: white;
-  /* padding: 10px; */
   border-radius: 10px;
-  height: 50px;
+  height: 40px; /* Fixed height for consistency */
+  width: auto;
 }
 
-.title h1 {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-}
+/* Login Button */
 .btn-login {
-  height: 38px;
-  width: 100px;
+  height: 40px;
+  padding: 0 20px;
+  min-width: 100px;
   background-color: #ff5733;
   color: white;
-  font-weight: 400;
+  font-weight: 600;
   border-radius: 10px;
   border: none;
-  font-size: 18px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
+.btn-login:hover {
+    background-color: #ff4757;
+}
+
+/* --- REMOVE BUTTON (The Main Fix) --- */
 .Remove-btn {
-  min-height: 10vh;
-  width: 33vh;
+  /* Make it big and clickable, but not based on screen height */
+  width: 100%;
+  max-width: 350px; /* Max width for desktop */
+  height: 60px;     /* Comfortable touch height */
+  
   background-color: #ff5733;
-  border-radius: 2vh;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  
+  border-radius: 30px; /* Pill shape looks better for action buttons */
   border: none;
-  font-size: 2.5vh;
-  margin-top: 3vh;
-  color: aliceblue;
+  margin-top: 50px;
+  
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.Remove-btn:hover {
+  background-color: #ff3333; /* Redder on hover for "Danger" feel */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.Remove-btn:active {
+    transform: translateY(0);
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media screen and (max-width: 600px) {
+    .title {
+        flex-direction: column;
+        text-align: center;
+        border-radius: 15px;
+    }
+
+    .title h1 {
+        flex-direction: column;
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+    }
+
+    /* Adjust button for small screens */
+    .Remove-btn {
+        width: 90%; /* Occupy most of the screen width */
+        font-size: 1.1rem;
+    }
 }
