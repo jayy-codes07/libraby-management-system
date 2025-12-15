@@ -1,3 +1,4 @@
+/* --- GLOBAL RESET --- */
 * {
   margin: 0;
   padding: 0;
@@ -5,90 +6,163 @@
   font-family: "Open Sans", sans-serif;
 }
 
+/* --- BODY & LAYOUT --- */
 body {
   font-family: Arial, sans-serif;
   min-height: 100vh;
+  /* Background Gradient */
   background-image: linear-gradient(to right, blueviolet, rgba(137, 43, 226, 0.345));
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
   padding-bottom: 50px;
 }
 
-/* Navbar styles */
-
+/* --- HEADING --- */
+.heading-container {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
 
 .heading-container h1 {
     color: white;
-    margin-bottom: 20px;
+    font-size: 2rem;
     text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    /* Add a nice border around title like your other pages */
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    display: inline-block;
+    width: 100%;
 }
 
-/* Grid Container */
+/* --- CARD GRID CONTAINER --- */
 .returned-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    width: 95%;
+    gap: 25px;
+    width: 100%;
     max-width: 1200px;
 }
 
-/* Card Style */
+/* --- CARD STYLE --- */
 .card {
-    height: 200px; /* Shorter than issued card since no button */
+    /* Responsive Width Logic */
     width: 400px;
-    background: rgba(255, 255, 255, 0.1);
+    max-width: 100%; /* Ensures it never overflows screen width */
+    height: auto;
+    min-height: 200px; /* Allow it to grow if text is long */
+
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(10px);
+    
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 15px;
+    
     display: flex;
-    align-items: center;
+    flex-direction: row; /* Default: Side by side */
     overflow: hidden;
     color: white;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    border-color: rgba(255,255,255,0.6);
+}
+
+/* --- IMAGE SECTION --- */
 .img-part {
     width: 35%;
-    height: 100%;
+    /* Ensure image covers area but doesn't stretch weirdly */
+    min-height: 200px; 
+    background-color: #000; /* Fallback color */
 }
 
 .img-part img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
+/* --- CONTENT SECTION --- */
 .contant-part {
     width: 65%;
-    padding: 15px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .details-question {
     font-weight: bold;
-    font-size: 0.9rem;
-    color: #ffd700; /* Gold color for labels */
+    font-size: 0.95rem;
+    color: #ffd700; /* Gold color */
+    display: flex;
+    align-items: center;
 }
 
 .details-question span {
     font-weight: normal;
-    color: white;
-    margin-left: 5px;
+    color: #f0f0f0;
+    margin-left: 8px;
+    font-size: 0.9rem;
 }
 
 .status-badge {
-    margin-top: 10px;
+    margin-top: 5px;
     background: #2ecc71; /* Green */
     color: white;
     text-align: center;
-    padding: 5px;
+    padding: 6px 15px;
     border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
+    font-size: 0.85rem;
+    font-weight: 700;
     width: fit-content;
-}   
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media screen and (max-width: 600px) {
+    .heading-container h1 {
+        font-size: 1.5rem;
+    }
+
+     .title {
+      flex-direction: column;
+      text-align: center;
+  }
+  .title h1 {
+      flex-direction: column;
+      font-size: 0.8rem;
+      height: 80px;
+  }
+
+    /* Change Layout to Vertical Stack on Phones */
+    .card {
+        flex-direction: column;
+        width: 100%; /* Full width */
+        height: auto;
+    }
+
+    .img-part {
+        width: 100%;
+        height: 200px; /* Fixed height for image area */
+    }
+
+    .contant-part {
+        width: 100%;
+        padding: 20px;
+    }
+}
